@@ -78,7 +78,5 @@
                 "Atlas": "Raiolanetworks\\Atlas\\Facades\\Atlas"
             }
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": false
+    }
 }
