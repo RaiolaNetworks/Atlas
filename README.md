@@ -1,4 +1,4 @@
-# This is my package 'Atlas'
+# Get the data from the most recondite place with 'Atlas'
 
 <!-- [![Latest Version ont](https://img.shields.io/packagist/v/raiolanetworks/atlas.svg?style=flat-square)](https://packagist.org/packages/raiolanetworks/atlas)
 
