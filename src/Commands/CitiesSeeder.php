@@ -25,9 +25,16 @@ class CitiesSeeder extends BaseSeeder
 
     protected ?string $dataPath = __DIR__ . '/../../resources/json/cities.json';
 
-    protected string $pluralName = EntitiesEnum::Cities->value;
+    protected string $pluralName = '';
 
     protected ?string $model = City::class;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->pluralName = EntitiesEnum::Cities->value;
+    }
 
     protected function parseItem(array $rawItem, array &$bulk): void
     {

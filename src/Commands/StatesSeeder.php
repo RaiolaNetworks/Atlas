@@ -26,9 +26,16 @@ class StatesSeeder extends BaseSeeder
 
     protected ?string $dataPath = __DIR__ . '/../../resources/json/states.json';
 
-    protected string $pluralName = EntitiesEnum::States->value;
+    protected string $pluralName = '';
 
     protected ?string $model = State::class;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->pluralName = EntitiesEnum::States->value;
+    }
 
     protected function parseItem(array $rawItem, array &$bulk): void
     {

@@ -26,9 +26,16 @@ class LanguagesSeeder extends BaseSeeder
 
     protected ?string $dataPath = __DIR__ . '/../../resources/json/languages.json';
 
-    protected string $pluralName = EntitiesEnum::Languages->value;
+    protected string $pluralName = '';
 
     protected ?string $model = Language::class;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->pluralName = EntitiesEnum::Languages->value;
+    }
 
     protected function parseItem(array $rawItem, array &$bulk): void
     {
