@@ -27,9 +27,16 @@ class CurrenciesSeeder extends BaseSeeder
 
     protected ?string $dataPath = __DIR__ . '/../../resources/json/currencies.json';
 
-    protected string $pluralName = EntitiesEnum::Currencies->value;
+    protected string $pluralName = '';
 
     protected ?string $model = Currency::class;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->pluralName = EntitiesEnum::Currencies->value;
+    }
 
     protected function parseItem(array $rawItem, array &$bulk): void
     {

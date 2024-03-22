@@ -26,9 +26,16 @@ class TimezonesSeeder extends BaseSeeder
 
     protected ?string $dataPath = __DIR__ . '/../../resources/json/countries.json';
 
-    protected string $pluralName = EntitiesEnum::Timezones->value;
+    protected string $pluralName = '';
 
     protected ?string $model = Timezone::class;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->pluralName = EntitiesEnum::Timezones->value;
+    }
 
     protected function parseItem(array $rawItem, array &$bulk): void
     {
