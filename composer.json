@@ -2,19 +2,30 @@
     "name": "raiolanetworks/atlas",
     "description": "Get the data from the most recondite place with 'Atlas'",
     "keywords": [
+        "countries",
+        "country",
+        "cities",
+        "city",
         "raiolanetworks",
         "laravel",
         "atlas"
     ],
-    "homepage": "https://github.com/raiolanetworks/atlas",
     "license": "MIT",
     "authors": [
         {
             "name": "Martín Gómez",
             "email": "martin@raiolanetworks.es",
+            "homepage": "https://raiolanetworks.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Victor Escribano",
+            "email": "victores@raiolanetworks.es",
+            "homepage": "https://raiolanetworks.com",
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/RaiolaNetworks/Atlas",
     "require": {
         "php": "^8.1",
         "illuminate/contracts": "^10.0",
