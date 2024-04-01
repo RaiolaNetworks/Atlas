@@ -26,7 +26,6 @@
         }
     ],
     "homepage": "https://github.com/RaiolaNetworks/Atlas",
-    ],
     "require": {
         "php": "^8.1",
         "illuminate/contracts": "^10.0",
