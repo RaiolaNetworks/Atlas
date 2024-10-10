@@ -19,7 +19,10 @@ class CreateTimezonesTable extends Migration
             return;
         }
 
-        Schema::create(config('atlas.timezones_tablename'), function (Blueprint $table) {
+        /** @var string $tableName */
+        $tableName = config('atlas.timezones_tablename');
+
+        Schema::create($tableName, function (Blueprint $table) {
             $table->id();
             $table->foreignId('country_id');
             $table->string('name');
@@ -33,6 +36,9 @@ class CreateTimezonesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('atlas.timezones_tablename'));
+        /** @var string $tableName */
+        $tableName = config('atlas.timezones_tablename');
+
+        Schema::dropIfExists($tableName);
     }
 }

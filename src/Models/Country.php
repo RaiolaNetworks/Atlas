@@ -19,7 +19,10 @@ class Country extends Model
      */
     public function getTable(): string
     {
-        return config('atlas.countries_tablename', parent::getTable());
+        /** @var string $tableName */
+        $tableName = config('atlas.countries_tablename');
+
+        return $tableName ?: parent::getTable();
     }
 
     /**

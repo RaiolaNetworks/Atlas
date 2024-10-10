@@ -18,7 +18,10 @@ class City extends Model
      */
     public function getTable(): string
     {
-        return config('atlas.cities_tablename', parent::getTable());
+        /** @var string $tableName */
+        $tableName = config('atlas.cities_tablename');
+
+        return $tableName ?: parent::getTable();
     }
 
     /**

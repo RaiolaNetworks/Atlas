@@ -18,7 +18,10 @@ class Currency extends Model
      */
     public function getTable(): string
     {
-        return config('atlas.currencies_tablename', parent::getTable());
+        /** @var string $tableName */
+        $tableName = config('atlas.currencies_tablename');
+
+        return $tableName ?: parent::getTable();
     }
 
     /**

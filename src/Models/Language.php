@@ -17,6 +17,9 @@ class Language extends Model
      */
     public function getTable(): string
     {
-        return config('atlas.languages_tablename', parent::getTable());
+        /** @var string $tableName */
+        $tableName = config('atlas.languages_tablename');
+
+        return $tableName ?: parent::getTable();
     }
 }
