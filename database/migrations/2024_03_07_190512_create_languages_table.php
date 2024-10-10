@@ -19,7 +19,10 @@ class CreateLanguagesTable extends Migration
             return;
         }
 
-        Schema::create(config('atlas.languages_tablename'), function (Blueprint $table) {
+        /** @var string $tableName */
+        $tableName = config('atlas.languages_tablename');
+
+        Schema::create($tableName, function (Blueprint $table) {
             $table->id();
             $table->char('code', 2);
             $table->string('name');
@@ -35,6 +38,9 @@ class CreateLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('atlas.languages_tablename'));
+        /** @var string $tableName */
+        $tableName = config('atlas.languages_tablename');
+
+        Schema::dropIfExists($tableName);
     }
 }

@@ -15,7 +15,10 @@ class CreateCountriesTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('atlas.countries_tablename'), function (Blueprint $table) {
+        /** @var string $tableName */
+        $tableName = config('atlas.countries_tablename');
+
+        Schema::create($tableName, function (Blueprint $table) {
             $table->id();
             $table->string('iso2', 2);
             $table->string('name');
@@ -38,6 +41,9 @@ class CreateCountriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('atlas.countries_tablename'));
+        /** @var string $tableName */
+        $tableName = config('atlas.countries_tablename');
+
+        Schema::dropIfExists($tableName);
     }
 }

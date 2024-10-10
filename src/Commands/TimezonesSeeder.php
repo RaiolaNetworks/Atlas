@@ -37,6 +37,12 @@ class TimezonesSeeder extends BaseSeeder
         $this->pluralName = EntitiesEnum::Timezones->value;
     }
 
+    /**
+     * @param array{
+     *     id: int,
+     *     timezones: array<int, array{zoneName: string}>,
+     * } $rawItem
+     */
     protected function parseItem(array $rawItem, array &$bulk): void
     {
         $bulk[] = [

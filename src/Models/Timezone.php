@@ -18,7 +18,10 @@ class Timezone extends Model
      */
     public function getTable(): string
     {
-        return config('atlas.timezones_tablename', parent::getTable());
+        /** @var string $tableName */
+        $tableName = config('atlas.timezones_tablename');
+
+        return $tableName ?: parent::getTable();
     }
 
     /**

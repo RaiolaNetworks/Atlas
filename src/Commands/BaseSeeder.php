@@ -111,6 +111,7 @@ abstract class BaseSeeder extends Command
                 $bulk = [];
 
                 foreach ($chunk as $value) {
+                    /** @var array<string,mixed> $value */
                     $this->parseItem($value, $bulk);
                 }
 

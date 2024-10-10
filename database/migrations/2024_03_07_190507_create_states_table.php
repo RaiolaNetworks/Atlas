@@ -19,7 +19,10 @@ class CreateStatesTable extends Migration
             return;
         }
 
-        Schema::create(config('atlas.states_tablename'), function (Blueprint $table) {
+        /** @var string $tableName */
+        $tableName = config('atlas.states_tablename');
+
+        Schema::create($tableName, function (Blueprint $table) {
             $table->id();
             $table->foreignId('country_id')->index();
             $table->string('name');
@@ -38,6 +41,9 @@ class CreateStatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('atlas.states_tablename'));
+        /** @var string $tableName */
+        $tableName = config('atlas.states_tablename');
+
+        Schema::dropIfExists($tableName);
     }
 }
